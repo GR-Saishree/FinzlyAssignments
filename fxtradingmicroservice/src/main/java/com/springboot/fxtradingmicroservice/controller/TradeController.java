@@ -1,6 +1,6 @@
 package com.springboot.fxtradingmicroservice.controller;
 
-
+// import statements
 import java.text.DecimalFormat;
 import java.util.List;
 
@@ -21,7 +21,8 @@ public class TradeController {
 	
 		@Autowired
 		TradeService service;
-		
+
+	        // Method to book a trade
 		@PostMapping("bookTrade")
 		public Object bookTrade(@RequestBody Trade trade) {
 			boolean isAdded = service.bookTrade(trade);
@@ -36,7 +37,8 @@ public class TradeController {
 						+ "2.Amount can't be zero or negative and can't exceed maximum trade value";
 			}
 		}
-		
+
+	        // Method to convert amount USD to INR and formatting it
 		public String currencyConverter(double USDINR, double amount) {
 			double convertedValue = USDINR * amount;
 			DecimalFormat decimalFormat = new DecimalFormat("#,###.00");
@@ -44,7 +46,7 @@ public class TradeController {
 			
 		}
 		
-
+                // Method to get the list of trades
 		@GetMapping("tradeList")
 		public ResponseEntity<Object> getListOfTrades(){
 			
