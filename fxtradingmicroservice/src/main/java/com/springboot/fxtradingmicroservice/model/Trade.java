@@ -2,7 +2,7 @@ package com.springboot.fxtradingmicroservice.model;
 
 public class Trade {
 	
-	
+	// variables for storing data
 	private int tradeNum=0;
 	private static double USDINRRate = 66.00;
 	private static double maxTradeValue = Double.MAX_VALUE-1;
@@ -12,17 +12,20 @@ public class Trade {
 	private String currencyPair;
 	private String convertedAmount;
 	
-	
+
+	// Default Constructor
 	Trade(){
 		
 	}
-	
+
+	// Parameterized constructor to initialize the values
 	Trade(String customerName,String currencyPair,double amount){
 		this.customerName = customerName;
 		this.currencyPair = currencyPair;
 		this.amount = amount;
 	}
 
+	// Getters and Setters
 	public int getTradeNum() {
 		return tradeNum;
 	}
@@ -70,12 +73,6 @@ public class Trade {
 	public static void setMaxTradeValue(double maxTradeValue) {
 		Trade.maxTradeValue = maxTradeValue;
 	}
-	
-	
-	@Override
-	public String toString() {
-		return "Trade Number: "+getTradeNum()+" , Customer Name: "+getCustomerName()+" , Currency Pair: "+getCurrencyPair()+" , Rate:  "+getUSDINRRate()+" , Amount Transferred:INR " +getUSDINRRate()*getAmount();
-	}
 
 	public String getConvertedAmount() {
 		return convertedAmount;
@@ -84,6 +81,15 @@ public class Trade {
 	public void setConvertedAmount(String convertedAmount2) {
 		this.convertedAmount = convertedAmount2;
 	}
+
+
+	// Overridden toString() method
+	@Override
+	public String toString() {
+		return "Trade Number: "+getTradeNum()+" , Customer Name: "+getCustomerName()+" , Currency Pair: "+getCurrencyPair()+" , Rate:  "+getUSDINRRate()+" , Amount Transferred:INR " +getUSDINRRate()*getAmount();
+	}
+
+	
 
 	
 }
