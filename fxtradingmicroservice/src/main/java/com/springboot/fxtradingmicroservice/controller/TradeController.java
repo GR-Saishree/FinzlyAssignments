@@ -39,7 +39,7 @@ public class TradeController {
 		}
 
 	        // Method to convert amount USD to INR and formatting it
-		public String currencyConverter(double USDINR, double amount) {
+		private String currencyConverter(double USDINR, double amount) {
 			double convertedValue = USDINR * amount;
 			DecimalFormat decimalFormat = new DecimalFormat("#,###.00");
 			return (decimalFormat.format(convertedValue));
