@@ -1,0 +1,11 @@
+<p>login-form works!</p>
+
+<input #username (keyup)="checkInputLength(username)" type="text" placeholder="Enter your name" required> <br><br>
+<input #password type="password" placeholder="Enter your password" required><br><br>
+<button (click)="checkPasswordLength(password)">Login</button> <br>
+<div *ngIf="displayMessage;else elsepart">
+    <h2>Password should be strong with more than 8 characters </h2></div>
+
+<ng-template #elsepart>
+  <div><h2>Login Successfull</h2></div>
+</ng-template>

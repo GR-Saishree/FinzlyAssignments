@@ -1,0 +1,12 @@
+<p>classbinding works!</p>
+
+<input #username type="text" [class.colorChanged]="colorChange"placeholder="Enter your name"><br><br>
+<button  (click)="onClick(username)">Click</button> <br><br>
+
+<input #address type="text" placeholder="Enter your addresss"><br><br>
+<button [class.colorChanged]="colorChange" (click)="onClick(username)">Click</button><br><br>
+
+<input #userInput type="text" placeholder="Enter your name"><br><br>
+<button (click)="sendData(userInput.value)">Click me to send data</button>
+
+
