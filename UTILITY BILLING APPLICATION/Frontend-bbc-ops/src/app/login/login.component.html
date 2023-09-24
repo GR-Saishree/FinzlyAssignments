@@ -1,0 +1,7 @@
+<div class="login-form"></div>
+<h1>Login Here</h1>
+<label for="employeeId">Employee ID</label> <br><br>
+<input type="number" class="login-input"[(ngModel)]="employeeId"> <br><br>
+<label for="employeeOTP">Employee OTP</label> <br><br>
+<input type="number" class="login-input"[(ngModel)]="employeeOTP"><br><br>
+<button (click)="login()" class="login-button">Login</button>
